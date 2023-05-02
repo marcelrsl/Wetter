@@ -1,0 +1,27 @@
+<!DOCTYPE html> <!-- Hier wird das HTML-Dokument definiert -->
+<html>
+<head>
+    <style>
+        /* Design des Dokuments definiert */
+        body {
+          font-family: Arial, sans-serif; /*Schriftart des Textes definiert */
+          background-color: #f2f2f2; /* Hintergrundfarbe definiert */
+        }
+    </style>            
+    <meta charset="UTF-8"> <!-- Zeichensatzencoding definiert -->
+    <title>Weather Information</title> <!-- Titel definiert -->
+</head>
+<body>
+    <!-- Hier wird der Inhalt des Dokuments definiert -->
+    <h1>Weather Information for <span th:text="${weatherInfo.cityName}"></span></h1> <!-- Überschrift mit dem Stadtnamen (Hamburg) -->
+    <p>Date and Time: <span th:text="${weatherInfo.date}"></span></p> <!-- Datum und die Uhrzeit-->
+    <p>Temperature: <span th:text="${weatherInfo.temperature}"></span> °C</p> <!-- Temperatur in Grad Celsius  -->
+    <p>Description: <span th:text="${weatherInfo.description}"></span></p> <!--Beschreibung des Wetters  -->
+    <img src="https://www.urlaubstracker.at/wp-content/uploads/2019/09/hamburg-speicherstadt-kanaele.jpg" alt="Hamburg" width="100%"> <!-- Hier wird ein Bild von Hamburg eingefügt -->
+
+<!-- Links zu den anderen Seiten  -->
+<a href="/">Home</a>
+<a href="/forecast">5-Day Forecast</a>
+<a href="/index">Index</a>
+</body>
+</html>

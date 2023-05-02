@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Forecast</title>
+
+  <!-- Design der Seite definiert -->
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+    
+    h1 {
+      font-size: 36px;
+      margin: 40px auto 20px;
+      text-align: center;
+    }
+    
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: 0 auto;
+      background-color: #fff;
+      box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+    }
+    
+    th, td {
+      text-align: center;
+      padding: 15px;
+    }
+    
+    th {
+      background-color: #e2e2e2;
+      color: #555;
+    }
+    
+    tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    
+    a {
+      display: block;
+      width: 150px;
+      margin: 20px auto;
+      text-align: center;
+      padding: 10px 15px;
+      border-radius: 5px;
+      background-color: #1abc9c;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
+    }
+    
+    a:hover {
+      background-color: #148f77;
+      color: #fff;
+      transition: background-color 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <h1>Weather Forecast for Hamburg</h1>
+
+  <!-- Hier wird die Tabelle mit den Vorhersagen dargestellt -->
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Temperature (°C)</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Schleife für die Vorhersagen wird durchgeführt und die Daten werden in die Tabelle eingefügt -->
+      <tr th:each="forecast : ${forecasts}">
+        <td th:text="${forecast.date}"></td>
+        <td th:text="${forecast.temperature}"></td>
+        <td th:text="${forecast.description}"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Link zur Startseite hinzugefügt -->
+  <a href="/">Back to Home</a>
+</body>
+</html>
+
